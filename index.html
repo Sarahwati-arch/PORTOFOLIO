@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarahwati - Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sarah<span>wati</span></div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#experiences">Experiences</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content slide-in-left">
+                <h1>Sarahwati</h1>
+                <div class="typewriter">
+                    I'm a&nbsp;<span class="typewriter-text"></span>
+                </div>
+
+                <p>“Software is a great combination between artistry and engineering.” – Bill Gates</p>
+                <p>I believe this quote perfectly describes what I enjoy most about coding. It’s not just about solving problems with logic, it’s also about designing something useful, beautiful, and easy to use.</p>
+                <div class="btn-group">
+                    <a href="files/Sarah_CV.pdf" class="btn" download>Curriculum Vitae</a>
+                    <a href="#projects" class="btn" style="margin-left: 15px; background: transparent; border: 2px solid var(--primary);">View Projects</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Sarahwati-arch" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sarah-wati-5a8989243" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/vvtysr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/6282175726492" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-img fade-in">
+                    <img src="foto sarah.jpg" alt="Michael Bryan Mandey">
+                </div>
+                <div class="about-text fade-in">
+                    <h3>I'm Sarahwati, or just call me Sarah</h3>
+                    <p>6th semester Informatics student at President University, concentrating in Internet of Things. My goal is to create technology that improves lives and makes a positive impact.</p>
+                    <p>I have a strong foundation in programming, web development, data analisys, database management, and IoT systems. Through various hands on projects in IoT, AI, mobile, and web development, I’ve developed practical technical skills and problem solving ability.</p>
+                    <p>I’m a fast learner who enjoys exploring new technologies beyond the classroom. Through various activities outside of class, I’ve had the chance to develop not only my technical skills, but also strengthen my leadership, teamwork, and communication abilities.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <canvas id="skills-canvas"></canvas>
+        <div class="container">
+            <h2 class="fade-in">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3 class="skill-title">Java</h3>
+                    <p class="skill-description">Expert in object-oriented programming with Java. Experienced in developing enterprise applications, Android apps, and backend services.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="90"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="skill-title">JavaScript</h3>
+                    <p class="skill-description">Proficient in modern JavaScript (ES6+), front-end frameworks, and creating interactive web applications with smooth animations.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="95"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="skill-title">PHP</h3>
+                    <p class="skill-description">Strong experience with PHP and frameworks like Laravel. Skilled in building dynamic websites and RESTful APIs.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="95"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-cuttlefish"></i><i style="font-size: 1.5rem; margin-left: -10px;">++</i>
+                    </div>
+                    <h3 class="skill-title">C++</h3>
+                    <p class="skill-description">Experienced in system programming, algorithm implementation, and performance optimization using C++.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="75"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="skill-title">Python</h3>
+                    <p class="skill-description">Skilled in Python programming for web development, data analysis, and automation. Experience with Flask.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">C</h3>
+                    <p class="skill-description">Solid foundation in C programming, focusing on memory management, pointer operations, and embedded systems fundamentals.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="skill-title">Firebase</h3>
+                    <p class="skill-description">Experienced with Firebase services including Firestore, Authentication, and Realtime Database for building scalable web and mobile apps.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="75"></div>
+                    </div>
+                </div>
+
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">SQL</h3>
+                    <p class="skill-description">Proficient in SQL and NoSQL databases including MySQL, PostgreSQL, and MongoDB. Experience with database design and optimization.</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="90"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+    <div class="container">
+            <h2 class="fade-in">Education Journey</h2>
+            <div class="education-timeline" id="education-timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>President University</h3>
+                        <h4>Bachelor's Degree in Informatics</h4>
+                        <p>Achieved a cumulative GPA of 3.80, with a perfect 4.00 GPA in the current semester. Focusing on Internet of Things concentration</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3>SMAN 12 Pekanbaru</h3>
+                        <h4>Matematika dan Ilmu Pengetahuan Alam</h4>
+                        <p>Completed high school education with an average diploma score of 90.92. </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="fade-in">Featured Projects</h2>
+            <div class="projects-container">
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/pawcine1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/pawcine2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pawcine</h3>
+                        <p class="project-description">Cat care app with search, online shop, emergency call, vet clinic locator, counseling, adoption center, cat videos, homepage navigation, and user login features.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="files/Pawcine_Report.pdf" class="project-link" target="_blank">Live Demo</a>
+                            <a href="#" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/cupkiss1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/cupkiss2.png" alt="Project Image 2" class="slide">
+                        <img src="img/cupkiss3.png" alt="Project Image 2" class="slide">
+                        <img src="img/cupkiss4.png" alt="Project Image 2" class="slide">
+                        <img src="img/cupkiss5.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cupkiss</h3>
+                        <p class="project-description">Cupkiss cupcake ordering website with login/signup, homepage, cupcake info, shopping cart, secure payment, and contact details.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MySQL</span>
+
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/u/1/mobile/folders/1dlKFHsIzLQHSgqKf6UuESgxPGWb18jMa" class="project-link">Live Demo</a>
+                            <a href="files/Cupkiss_Report.pdf" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/visar1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/visar2.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar3.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar4.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar5.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar6.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar7.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar8.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar9.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar10.png" alt="Project Image 2" class="slide">
+                        <img src="img/visar11.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Visar</h3>
+                        <p class="project-description">Visar is a MySQL-based DVD game rental system where admins manage products, bookings, and customer data securely, with support for multi-booker transactions and product sharing among users.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Laravel</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="files/Visar_Report.pdf" class="project-link">Live Demo</a>
+                            <a href="files/Visar_Report.pdf" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/stacato1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/stacato2.png" alt="Project Image 2" class="slide">
+                        <img src="img/stacato3.png" alt="Project Image 2" class="slide">
+                        <img src="img/stacato4.png" alt="Project Image 2" class="slide">
+                        <img src="img/stacato5.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Stacato Studio</h3>
+                        <p class="project-description">This application is designed for renting band studios. It provides a platform where admin can search for, book, and manage studio rentals based on users specific needs. Some of its features include helping admin keep track, create, update, and delete projects in a simple manner.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">MySql</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="files/Stacato_Report.pdf" class="project-link">Live Demo</a>
+                            <a href="files/Stacato_Report.pdf" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/cga1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/cga2.png" alt="Project Image 2" class="slide">
+                        <img src="img/cga3.png" alt="Project Image 2" class="slide">
+                        <img src="img/cga4.png" alt="Project Image 2" class="slide">
+                        <img src="img/cga5.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SpaceBob</h3>
+                        <p class="project-description">Spacebob is a 3D animation project featuring custom-modeled characters, props, and space-themed storytelling, built using Blender with detailed texturing, rigging, and environment assembly for a creative animated scene.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Blender 3D</span>
+                            <span class="project-tag">HDRI Lighting</span>
+                            <span class="project-tag">Procedural Texturing</span>
+                            <span class="project-tag">Character Rigging</span>
+                            <span class="project-tag">Animation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1jMJnBBPIhV0567Ws35hq2V3nz-UsAF4j?usp=sharing" class="project-link">Live Demo</a>
+                            <a href="https://drive.google.com/drive/folders/1jMJnBBPIhV0567Ws35hq2V3nz-UsAF4j?usp=sharing" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/medibot1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/medibot2.png" alt="Project Image 2" class="slide">
+                        <img src="img/medibot3.png" alt="Project Image 2" class="slide">
+                        <img src="img/medibot4.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Medibot</h3>
+                        <p class="project-description">Medibot is an AI-powered medication reminder chatbot that helps users stay on schedule with their prescriptions through natural language input, smart scheduling, and real-time notifications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">spaCy, Schedule, Time</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">Fetch API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/17GQijj3tawuK6rN1TLQ6vgFtTWKIwa6Z?usp=sharing"class="project-link">Live Demo</a>
+                            <a href="https://drive.google.com/drive/folders/17GQijj3tawuK6rN1TLQ6vgFtTWKIwa6Z?usp=sharing" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/syncat1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/syncat2.png" alt="Project Image 2" class="slide">
+                        <img src="img/syncat3.png" alt="Project Image 2" class="slide">
+                        <img src="img/syncat4.png" alt="Project Image 2" class="slide">
+                        <img src="img/syncat5.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SynCat</h3>
+                        <p class="project-description">synCat is an app made for two people, like couples or best friends to stay connected. It lets users share live location, update statuses, and send a “miss you” alert. Both users log in with the same password, making it private and easy to use.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">PHP</span>
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">GPS API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1EBaPu5x5GpAOOGvAvc9cNN_QuB2seBEN?usp=sharing"class="project-link">Live Demo</a>
+                            <a href="https://drive.google.com/drive/folders/1EBaPu5x5GpAOOGvAvc9cNN_QuB2seBEN?usp=sharing" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/todo1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/todo2.png" alt="Project Image 2" class="slide">
+                        <img src="img/todo3.png" alt="Project Image 2" class="slide">
+                        <img src="img/todo4.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">To Do List</h3>
+                        <p class="project-description">A personalized To-Do List Android app built with Java, allowing users to add tasks with pictures and status, save data locally, and interact through Bluetooth and light sensor features that visually respond to ambient lighting.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Android Studio</span>
+                            <span class="project-tag">Local Storage</span>
+                            <span class="project-tag">Bluetooth API</span>
+                            <span class="project-tag">Light Sensor API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://drive.google.com/drive/folders/1mlP6zfUBrknBqEGZGTbP08tjrXdD_9L_?usp=sharing"class="project-link">Live Demo</a>
+                            <a href="https://drive.google.com/drive/folders/1mlP6zfUBrknBqEGZGTbP08tjrXdD_9L_?usp=sharing" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-img slideshow">
+                        <img src="img/quiz1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/quiz2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">QuizApp</h3>
+                        <p class="project-description">An interactive Quiz App built in Android Studio using Java, where users answer multiple-choice questions and receive instant feedback with color indicators and a final score summary, with an option to retake the quiz.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Android Studio</span>
+                            <span class="project-tag">Firebase Realtime Database</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/naurelie/DELAVISAR"class="project-link">Live Demo</a>
+                            <a href="https://github.com/naurelie/DELAVISAR" class="project-link">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Experiences Section -->
+    <section id="experiences">
+    <div class="container">
+        <h2 class="fade-in">Organization Experiences</h2>
+        <div class="experience-timeline">
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - 2024</span>
+                    <div class="timeline-img">
+                        <img src="img/pusb.jpg" alt="PUSB Experience">
+                    </div>
+                    <h3>President University Student Board (PUSB)</h3>
+                    <h4>Research and Development - Ministry of Development</h4>
+                    <p>In this role, I was responsible for conducting research and collecting feedback related to previous work programs and events held by PUSB. The goal was to evaluate and provide insights to improve the quality and impact of future events.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 - Present</span>
+                    <div class="timeline-img">
+                        <img src="img/puma.jpg" alt="PUSB Experience">
+                    </div>
+                    <h3>President University Major Association Informatics</h3>
+                    <h4>Vice Head of External Relation</h4>
+                    <p>I supported the Head of Division in managing the team and ensuring smooth coordination across all external initiatives. I also took the lead as Supervisor for major external events, including the Comparative Study and Company Visit, overseeing the planning and execution phases.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 - Present</span>
+                    <div class="timeline-img">
+                        <img src="img/pudc.jpg" alt="PUSB Experience">
+                    </div>
+                    <h3>President University Developer Club</h3>
+                    <h4>Leader</h4>
+                    <p>A tech-based student club that serves as a platform for students to learn, connect, and grow in the world of technology, especially in front-end & back-end web development, AI, and cybersecurity. I lead the overall direction of the club, coordinate internal divisions, and oversee key programs like tech panels, workshops, study jams, and internal development projects. Currently mentoring 170+ active members from various batches and majors.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - 2024</span>
+                    <div class="timeline-img">
+                        <img src="img/gdsc.jpg" alt="PUSB Experience">
+                    </div>
+                    <h3>Google Developer Student Club ITB</h3>
+                    <h4>Web Development Member</h4>
+                    <p>I participate in a collaborative learning environment focused on technical and soft skills development. I take part in events such as workshops, study jams, tech talks, and hands-on projects.</p>
+                </div>
+            </div>
+            </div>
+
+
+            <h2 class="fade-in" style="margin-top: 100px;">Volunteer Experiences</h2>
+            <div class="card-experience-grid fade-in">
+
+                <!-- 1. PR & Event Internship -->
+                <div class="card-experience">
+                    <div class="project-img slideshow">
+                        <img src="img/pr1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/pr2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <h3>PR & Event Internship</h3>
+                    <h4>Website Manager, News Writer & Photographer </h4>
+                    <p class="card-org">President University<br><span>Oct 2023 – Apr 2024</span></p>
+                    <ul>
+                        <li>Managed and uploaded web content related to campus events.</li>
+                        <li>Conducted interviews and photography for news articles.</li>
+                        <li>Organized and edited photographs for publication.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Social Project: Personal Branding -->
+                <div class="card-experience">
+                    <div class="project-img slideshow">
+                        <img src="img/sospro.png" alt="Project Image 1" class="slide active">
+                        <img src="img/sospro1.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <h3>Social Project: Digital Marketing & Personal Branding</h3>
+                    <h4>Event Organizr & Master of Ceremony</h4>
+                    <p class="card-org"> Lamajang Village, Pangalengan, Bandung, Jawa Barat<br><span>June – July 2024</span></p>
+                    <ul>
+                        <li>Planned and managed event concept, activity and schedules.</li>
+                        <li>Coordinated with speakers and participants to ensure a smooth event.</li>
+                        <li>Moderated and facilitated event discussions.</li>
+                        <li>Engaged with the audience to promote interaction and feedback.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Mangrove Rangers -->
+                <div class="card-experience">
+                    <div class="project-img slideshow">
+                        <img src="img/mangrove1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/mangrove2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <h3>Mangrove Rangers 2024</h3>
+                    <h4>Volunteer</h4>
+                    <p class="card-org">PRPM Mangrove Forest, Pusakajaya Utara, Cilebar, Karawang, Jawa Barat<br><span>June – July 2024</span></p>
+                    <ul>
+                        <li>Planted 100 mangrove plants as part of an environmental conservation effort.</li>
+                        <li>Collaborated with team members to ensure proper planting techniques.</li>
+                        <li>Supported the promotion of environmental sustainability initiatives.</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Elevate Informatics Festival -->
+                <div class="card-experience">
+                    <div class="project-img slideshow">
+                        <img src="img/pr1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/pr2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <h3>Elevate Informatics Festival 2025</h3>
+                    <h4>Project Manager</h4>
+                    <p class="card-org">President University<br><span>Jan – Sep 2025</span></p>
+                    <ul>
+                        <li>Lead 4 sub-events as Project Manager (Elifair, SoundIT, etc).</li>
+                        <li>Oversaw timeline, team coordination, and execution.</li>
+                    </ul>
+                </div>
+
+                <!-- 5. Comparative Study -->
+                <div class="card-experience">
+                    <div class="project-img slideshow">
+                        <img src="img/comstud1.png" alt="Project Image 1" class="slide active">
+                        <img src="img/comstud2.png" alt="Project Image 2" class="slide">
+                    </div>
+                    <h3>Comparative Study PUSB – Unhan RI</h3>
+                    <h4>Vice Project Manager</h4>
+                    <p class="card-org">Universitas Pertahanan Indonesia, Kabupaten Bogor, Jawa Barat.<br><span>January - July 2024</span></p>
+                    <ul>
+                        <li>Assisted in planning and organizing the Comparative Study 2024 event.</li>
+                        <li>Coordinated committee workflow and event delivery.</li>
+                        <li>Managed the committee and directed activities to ensure smooth execution.</li>
+                        <li>Supported the Project Officer in overseeing event logistics and coordination.</li>
+                    </ul>
+                </div>
+
+                <!-- Compressed other experiences -->
+                <div class="card-experience">
+                    <h3>Additional Roles</h3>
+                    <ul style="columns: 2; column-gap: 30px;">
+                        <li>Supervisor of Hello World 2025</li>
+                        <li>Supervisor of Pathfinder 2025</li>
+                        <li>Supervisor of Informatics Connect 2025</li>
+                        <li>Supervisor of Company Visit I PUMA Informatcs</li>
+                        <li>PIC Logistic of Boards of Clubs and Communities Avowal 2024</li>
+                        <li>PIC Event Organizer of A Long Night 2024</li>
+                        <li>PIC Food & Beverage of Interact 2024</li>
+                        <li>PIC Logistic of PUSB Regeneration 2025</li>
+                        <li>Public Relation of Communication Forum I 2024</li>
+                        <li>Master of Ceremony of Communication Forum II 2024</li>
+                        <li>Logistic of PUSH CUP 2024</li>
+                        <li>Fundraising of Knowledge Contest 2024</li>
+                        <li>Food & Beverage of Student House Farewell 2024</li>
+                        <li>Multimedia and Design of Welcoming Freshman 2024</li>
+                        <li>Runner of Pre-Uni 2025</li>
+                        <li>Medic of PUSB Leadership Training 2025</li>
+                        <li>Guard of Presuniv Sport Tournament 2024</li>
+                        <li>IoT Trainer of Presuniv x UNITAR Lecturer Collaboration 2025</li>
+                        <li>Event Organizer of Regenetics PUMA 2025</li>
+                    </ul>
+                </div>
+
+                <!-- 6. Documentation Gallery -->
+                <div class="card-experience" style="grid-column: 1 / -1;">
+                    <h3>Documentation Gallery</h3>
+                    <div class="project-img slideshow" style="height: 250px; border-radius: 12px; overflow: hidden;">
+                        <img src="img/cga1.png" alt="Documentation 1" class="slide active">
+                        <img src="img/cga2.png" alt="Documentation 2" class="slide">
+                        <img src="img/cga4.png" alt="Documentation 3" class="slide">
+                        <img src="img/cga5.png" alt="Documentation 4" class="slide">
+                    </div>
+                    <p class="card-org" style="margin-top: 15px;">Photos from various volunteering, leadership, and event organizing activities in 2024–2025.</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p>+62 821 7572 6492</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>sarahwati2004@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Bekasi, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Social Media</h3>
+                            <div class="social-links" style="margin-top: 10px;">
+                                <a href="https://github.com/Sarahwati-arch" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://linkedin.com/in/sarah-wati-5a8989243" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/vvtysr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://wa.me/6282175726492" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Sarah<span>wati</span></div>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#experiences">Experiences</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Sarahwati-arch" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/sarah-wati-5a8989243" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/vvtysr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/6282175726492" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sarahwati. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade');
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 100);
+            
+            // Back to Top Button
+            const backToTop = document.querySelector('.back-to-top');
+            backToTop.classList.toggle('active', window.scrollY > 500);
+            
+            // Activate animations on scroll
+            const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in');
+            fadeElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('active');
+                }
+            });
+            
+            // Animate skill progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const barPosition = bar.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (barPosition < screenPosition) {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                }
+            });
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top Button
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('active');
+        });
+        
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('active');
+        });
+        
+        // Links and buttons hover effect
+        const links = document.querySelectorAll('a, button, .hamburger');
+        
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+            });
+        });
+
+        // Typewriter effect
+        const typewriterText = document.querySelector('.typewriter-text');
+        const phrases = [' AI Developer ', ' IOT Developer ', ' Web Developer ', ' Mobile App Developer ', ' Data Analys '];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+        
+        function type() {
+            isEnd = false;
+            typewriterText.textContent = currentPhrase.join('');
+            
+            if (phraseIndex < phrases.length) {
+                
+                // Create our current phrase
+                if (!isDeleting && letterIndex <= phrases[phraseIndex].length) {
+                    currentPhrase.push(phrases[phraseIndex][letterIndex-1]);
+                    letterIndex++;
+                    typewriterText.textContent = currentPhrase.join('');
+                }
+                
+                // Delete current phrase
+                if (isDeleting && letterIndex > 0) {
+                    currentPhrase.pop();
+                    letterIndex--;
+                    typewriterText.textContent = currentPhrase.join('');
+                }
+                
+                // Move to next phrase
+                if (isDeleting && letterIndex === 0) {
+                    currentPhrase = [];
+                    isDeleting = false;
+                    phraseIndex++;
+                    
+                    if (phraseIndex === phrases.length) {
+                        phraseIndex = 0;
+                    }
+                }
+                
+                // Start deleting after phrase is complete
+                if (!isDeleting && letterIndex === phrases[phraseIndex].length + 1) {
+                    isDeleting = true;
+                    isEnd = true;
+                }
+                
+                // Typing speed
+                const typingSpeed = isEnd ? 2000 : isDeleting ? 50 : 100;
+                setTimeout(type, typingSpeed);
+            }
+        }
+        
+        setTimeout(type, 1000);
+
+        // Form submit handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Particles.js - This is the configuration for interactive particles
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#2563eb"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#2563eb",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 3,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"  // This is what makes particles connect when cursor is near
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,  // Distance at which particles will connect to cursor
+                        line_linked: {
+                            opacity: 1  // Opacity of connecting lines when cursor is near
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // 3D Skills Canvas - For 3D floating elements in the skills section
+        const canvas = document.getElementById('skills-canvas');
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true
+        });
+        
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+        camera.position.z = 5;
+        
+        // Create floating icons
+        const iconGeometry = new THREE.TetrahedronGeometry(1, 0);
+        const iconMaterial = new THREE.MeshBasicMaterial({
+            color: 0x2563eb,
+            wireframe: true
+        });
+        
+        const icons = [];
+        
+        for (let i = 0; i < 20; i++) {
+            const icon = new THREE.Mesh(iconGeometry, iconMaterial);
+            icon.position.x = (Math.random() - 0.5) * 20;
+            icon.position.y = (Math.random() - 0.5) * 20;
+            icon.position.z = (Math.random() - 0.5) * 20;
+            icon.rotation.x = Math.random() * Math.PI;
+            icon.rotation.y = Math.random() * Math.PI;
+            
+            scene.add(icon);
+            icons.push({
+                mesh: icon,
+                rotSpeed: (Math.random() - 0.5) * 0.02,
+                floatSpeed: (Math.random() - 0.5) * 0.01
+            });
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            icons.forEach(icon => {
+                icon.mesh.rotation.x += icon.rotSpeed;
+                icon.mesh.rotation.y += icon.rotSpeed;
+                icon.mesh.position.y += Math.sin(Date.now() * 0.001) * icon.floatSpeed;
+            });
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Resize handler
+        window.addEventListener('resize', () => {
+            if (canvas.clientWidth > 0 && canvas.clientHeight > 0) {
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+            }
+        });
+
+        // Glow effect - Creates a glowing effect that follows the cursor
+        const glow = document.createElement('div');
+        glow.classList.add('glow');
+        document.body.appendChild(glow);
+        
+        document.addEventListener('mousemove', e => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+    
+        //project section
+        document.querySelectorAll('.slideshow').forEach((slideshow) => {
+            const slides = slideshow.querySelectorAll('.slide');
+            let current = 0;
+
+            setInterval(() => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
+            }, 2000); // Ganti gambar tiap 2 detik
+        });
+
+
+        //education section
+        window.addEventListener('load', () => {
+            const timeline = document.getElementById('education-timeline');
+            const item = timeline.querySelector('.timeline-item');
+
+            // Hitung lebar item + gap dinamis
+            const style = getComputedStyle(item);
+            const gap = parseInt(style.marginRight) || 40;
+            const itemWidth = item.offsetWidth;
+            const scrollAmount = itemWidth + gap;
+
+            let autoScroll = true;
+
+            function scrollNextCard() {
+                if (!autoScroll) return;
+
+                const maxScrollLeft = timeline.scrollWidth - timeline.clientWidth;
+
+                if (timeline.scrollLeft + scrollAmount >= maxScrollLeft - 5) { // beri toleransi 5px
+                    timeline.scrollLeft = 0;
+                } else {
+                    timeline.scrollLeft += scrollAmount + 70;
+                }
+
+                setTimeout(scrollNextCard, 2500);
+            }
+
+            scrollNextCard();
+
+            // Stop auto-scroll saat user interaksi
+            ['wheel', 'touchstart', 'mousedown'].forEach(event => {
+                timeline.addEventListener(event, () => {
+                    autoScroll = false;
+                });
+            });
+        });
+
+
+        
+    </script>
+</body>
+</html>
