@@ -6,8 +6,6 @@ import BackToTop from "./components/BackToTop";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
-import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Experiences from "./components/Experiences";
 import Contact from "./components/Contact";
@@ -38,8 +36,6 @@ export default function App() {
       <Header sticky={sticky} />
       <Hero />
       <About />
-      <Skills />
-      <Education />
       <Projects />
       <Experiences />
       <Contact />

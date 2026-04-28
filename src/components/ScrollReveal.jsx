@@ -27,7 +27,7 @@ export default function ScrollReveal({ children, className }) {
 
   if (typeof child === "object" && child !== null && child.type) {
     const existingClass = child.props.className || "";
-    const wrapperClass = `fade-in ${existingClass}`.trim();
+    const wrapperClass = `fade-in ${className || ""} ${existingClass}`.trim();
     return (
       <div ref={ref} className={wrapperClass} style={{ width: "100%" }}>
         {children}

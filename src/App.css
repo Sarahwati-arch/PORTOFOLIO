@@ -1,6 +1,7 @@
         /* Base Styles */
         :root {
-            --primary: #ef4444;        /* merah utama */
+            --primary: #ef4444;
+            /* merah utama */
             --primary-dark: #b91c1c;
             --secondary: #212f4d;
             --dark: #1f2937;
@@ -36,7 +37,10 @@
             padding: 0 20px;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             margin-bottom: 1rem;
             font-weight: 700;
             line-height: 1.2;
@@ -237,8 +241,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         .typewriter {
@@ -259,13 +270,25 @@
         }
 
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--secondary) }
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--secondary)
+            }
         }
 
         .social-links {
@@ -296,33 +319,57 @@
 
         /* About Section */
         #about {
+            padding: 40px 0;
             background: linear-gradient(to bottom, #0f172a, #1e1b4b);
         }
 
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            justify-content: space-between;
+            margin-top: -150px;
+            gap: 80px;
         }
 
         .about-img {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-img img {
-            width: 80%;
-            border-radius: 20px;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .about-img img:hover {
-            transform: scale(1.05);
+            flex: 0 0 50%;
+            /* Bagi ruang 50:50 dengan teks */
+            max-width: 50%;
+            position: relative;
         }
 
         .about-text {
-            flex: 1;
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-left: 40px;
+            /* Kasih jarak napas yang luas untuk teks */
+        }
+
+        /* Container untuk Spline 3D */
+        .spline-container {
+            width: 160%;
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+
+            /* KUNCI RAHASIANYA DI SINI: */
+            /* translateX(-15%) untuk geser ke kiri agar teks aman */
+            /* scale(1.4) untuk nge-zoom agar ukurannya membesar */
+            transform: translateX(-45%) scale(1.4);
+
+            transform-origin: center;
+        }
+
+        .spline-container:active {
+            cursor: grabbing;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #0f172a;
+            position: relative;
         }
 
         /* Skills Section */
@@ -402,108 +449,153 @@
             transition: width 1.5s ease;
         }
 
-        /* Education Section */
+        /* Education Section (3D Flip Card Layout) */
         #education {
-        background: linear-gradient(to bottom, #1e1b4b, #0f172a);
-        padding: 100px 0;
-        overflow: hidden;
+            background: linear-gradient(to bottom, #1e1b4b, #0f172a);
+            padding: 100px 0;
+            overflow: hidden;
         }
 
-        .education-timeline {
-            display: flex;
-            gap: 40px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            max-width: 100%;
-            padding: 0 40px;
+        .education-single-card {
+            width: 100%;
+            margin: 0 auto;
+            perspective: 1000px;
+            /* Memberikan efek ruang 3D */
         }
 
-        /* Biar item pertama agak ke tengah */
-        .education-timeline .timeline-item:first-child {
-            margin-left: calc((100vw - 80vw) / 2);
-        }
-
-        /* Biar item terakhir juga ga mepet */
-        .education-timeline .timeline-item:last-child {
-            margin-right: calc((100vw - 80vw) / 2);
-        }
-
-        .timeline-item {
-            flex: 0 0 80vw;
-            scroll-snap-align: start;
-            background: transparent;
-            padding: 30px;
-            border-radius: 15px;
-            min-height: 250px;
+        .flip-card {
+            width: 100%;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
-        .timeline-content {
-            background: var(--card-bg);
-            padding: 30px 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            width: 100%;
-            max-width: unset;       /* Batasi maksimal lebar isi teks */
-            font-size: 1rem;         /* Normal font size */
-            line-height: 1.6;        /* Spasi antar baris nyaman */
-            word-break: normal;      /* Jangan paksa break sembarangan */
-            white-space: normal;     /* Izinkan wrapping natural */
-        }
-
-
-        .timeline-content:hover {
+        .flip-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            /* Tetap ada efek naik saat dihover */
         }
 
-        .timeline-content h3,
-        .timeline-content h4,
-        .timeline-content p {
-            margin-bottom: 12px;
-            line-height: 1.5;
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            /* Agar sisi belakang tidak tembus/rusak */
+            display: grid;
+            /* Trik agar front dan back tumpang tindih dengan ukuran sama */
         }
 
-        .timeline-date {
-            background: var(--primary);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            grid-area: 1 / 1 / 1 / 1;
+            /* Meletakkan front & back persis di tempat yang sama */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            /* Style aslinya dari .education-single-content */
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Membalik sisi belakang sedari awal agar tersembunyi */
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Typography di dalam Flip Card */
+        .flip-card-front h3,
+        .flip-card-back h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .flip-card-front h4,
+        .flip-card-back h4 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .flip-card-front p,
+        .flip-card-back p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* Teks kecil petunjuk klik */
+        .flip-hint {
+            margin-top: 25px;
+            color: var(--gray);
             font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: inline-block;
+            font-style: italic;
+            opacity: 0.7;
             text-align: center;
         }
 
+        /* Responsif untuk HP */
+        @media screen and (max-width: 768px) {
 
-        /* Optional: scrollbar style */
-        .education-timeline::-webkit-scrollbar {
-            height: 8px;
-        }
-        .education-timeline::-webkit-scrollbar-thumb {
-            background-color: var(--primary);
-            border-radius: 4px;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex: 0 0 90%;
-            }
-
-            .timeline-content {
-                padding: 25px;
+            .flip-card-front,
+            .flip-card-back {
+                padding: 30px 20px;
             }
         }
 
 
+        /* =========================================
+        Filter Buttons (Projects Section)
+        ========================================= */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 25px;
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--gray);
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(239, 68, 68, 0.05);
+            /* Sedikit efek merah transparan saat dihover */
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            /* Efek glow merah khas tema kamu */
+        }
 
         /* Projects Section */
         #projects {
-            background: #0f172a;
+            background-color: #111827;
+            /* Ini yang bikin garis batasnya beneran muncul */
+            border-bottom: 2px solid #2d3748;
         }
 
         .projects-container {
@@ -701,7 +793,7 @@
             max-width: 260px;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -1074,8 +1166,15 @@
         }
 
         @keyframes scroll {
-            0% { transform: translate(-50%, 0); opacity: 1; }
-            100% { transform: translate(-50%, 20px); opacity: 0; }
+            0% {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, 20px);
+                opacity: 0;
+            }
         }
 
         /* Preloader */
@@ -1108,8 +1207,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Custom cursor */
@@ -1160,6 +1264,7 @@
             .about-img {
                 margin-bottom: 30px;
             }
+
 
             .contact-container {
                 grid-template-columns: 1fr;

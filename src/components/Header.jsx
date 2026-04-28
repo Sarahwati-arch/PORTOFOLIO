@@ -2,9 +2,9 @@ import { useState } from "react";
 
 const navItems = [
   { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
+  { href: "#about", label: "About Me" },
+  // { href: "#skills", label: "Skills" },
+  // { href: "#education", label: "Education" },
   { href: "#projects", label: "Projects" },
   { href: "#experiences", label: "Experiences" },
   { href: "#contact", label: "Contact" },

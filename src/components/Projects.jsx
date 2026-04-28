@@ -1,15 +1,42 @@
+import { useState } from "react";
 import { projects } from "../data/projects";
 import ScrollReveal from "./ScrollReveal";
 import Slideshow from "./Slideshow";
 
 export default function Projects() {
+  // Set default filter ke "App" (atau kategori pertama) agar tidak kosong saat awal dimuat
+  const [filter, setFilter] = useState("App");
+
+  // "All" dihapus dari daftar kategori
+  const categories = ["App", "AI", "IoT"];
+
+  // Logika filter disederhanakan karena hanya perlu mencocokkan kategori spesifik
+  const filteredProjects = projects.filter(project => project.category === filter);
+
   return (
     <section id="projects">
       <div className="container">
-        <h2 className="fade-in">Featured Projects</h2>
+        <ScrollReveal>
+          <h2 className="fade-in">Featured Projects</h2>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <div className="filter-container">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`filter-btn ${filter === cat ? "active" : ""}`}
+                onClick={() => setFilter(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
+
         <div className="projects-container">
-          {projects.map((project, index) => (
-            <ScrollReveal key={index}>
+          {filteredProjects.map((project, index) => (
+            <ScrollReveal key={`${filter}-${index}`}>
               <div className="project-card">
                 <Slideshow images={project.images} />
                 <div className="project-content">

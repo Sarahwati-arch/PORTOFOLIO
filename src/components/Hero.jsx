@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 const phrases = [
@@ -12,8 +12,10 @@ const phrases = [
 
 export default function Hero() {
   const typewriterText = useTypewriter(phrases);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    setIsActive(true);
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
         particles: {
@@ -83,7 +85,7 @@ export default function Hero() {
     <section id="hero">
       <div id="particles-js"></div>
       <div className="container">
-        <div className="hero-content slide-in-left">
+        <div className={`hero-content slide-in-left ${isActive ? "active" : ""}`}>
           <h1>Sarahwati</h1>
           <div className="typewriter">
             I'm a&nbsp;
@@ -99,7 +101,7 @@ export default function Hero() {
             about designing something useful, beautiful, and easy to use.
           </p>
           <div className="btn-group">
-            <a href="files/CV ATS SARAHWATI.pdf" className="btn" download>
+            <a href="files/CV SARAHWATI.pdf" className="btn" download>
               Curriculum Vitae
             </a>
             <a
