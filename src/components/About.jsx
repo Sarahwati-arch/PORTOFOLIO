@@ -2,18 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { skills } from "../data/skills";
 import ScrollReveal from "./ScrollReveal";
-// Import Spline untuk React
-import Spline from '@splinetool/react-spline';
-
+import ImageMarquee from "./ImageMarquee";
 const educationData = [
   {
     date: "2023 - Present",
     school: "President University",
     degree: "Bachelor's Degree in Informatics",
     details: [
-      "75% Jababeka Scholarship Awardee",
-      "Cumulative GPA of 3.71, with a perfect 4.00 GPA in the current semester.",
-      "Relevant Coursework: Software Engineering, Object Oriented and Visual Programming, Server-Side Internet-Programming, Database Systems, Computer Network, dan Programming Concepts, Artificial Intelligence, Robotics, dan Automatic Navigation System, IoT Programming, Microcontroller, Embedded System, Wireless and Mobile Programming.",
+      "75% Jababeka Scholarship Awardee.",
+      "Cumulative GPA: 3.71 (Achieved a perfect 4.00 GPA in the current semester).",
+      "Relevant Coursework: Software Engineering, Database Systems, Artificial Intelligence, IoT Programming, Robotics, and Embedded Systems.",
+      "Non-Academic: Orchestra Cellist, Southeast Band."
     ],
   },
   {
@@ -22,9 +21,10 @@ const educationData = [
     degree: "Mathematics and Sciences",
     details: [
       "Average diploma score of 90.92.",
-      "School representative for the National Science Olympiad in Astronomy",
+      "School representative for the National Science Olympiad in Astronomy.",
+      "Non-Academic: Basketball Club, Marching Band, Four+Two Band."
     ],
-  },
+  }
 ];
 
 export default function About() {
@@ -107,25 +107,20 @@ export default function About() {
 
         {/* Profile Info */}
         <div className="about-content">
-          <div className="about-img">
-            {/* Mengganti foto dengan Spline 3D */}
-            <div className="spline-container">
-              <Spline scene="https://prod.spline.design/igiYDiSgOJsvuZJB/scene.splinecode" />
-            </div>
-          </div>
+          <ImageMarquee />
           <ScrollReveal className="about-text">
             <h3>Hi! I am Sarah</h3>
             <p>
-              6th semester Informatics student at President University,
-              concentrating in Internet of Things. My goal is to create
-              technology that improves lives and makes a positive impact.
+              An Informatics undergraduate at President University.
+              I don't just write code, I build practical solutions.
+              With a solid foundation in software engineering, web development, and databases,
+              I love pushing boundaries by exploring AI, IoT, and full-stack development.
+              I believe great tech is built through collaboration and a drive to solve real-world problems.
             </p>
             <p>
-              I have a strong foundation in programming, web development, data
-              analisys, database management, and IoT systems. Through various
-              hands on projects in IoT, AI, mobile, and web development, I've
-              developed practical technical skills and problem solving ability.
+              But enough talking about what I can do, scroll down to see what I've actually built.
             </p>
+            <br />
             <div className="btn-group">
               <a href="#contact" className="btn">
                 Let's Talk
