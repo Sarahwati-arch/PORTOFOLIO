@@ -36,8 +36,8 @@ export default function App() {
       <Header sticky={sticky} />
       <Hero />
       <About />
-      <Projects />
       <Experiences />
+      <Projects />
       <Contact />
       <Footer />
     </>

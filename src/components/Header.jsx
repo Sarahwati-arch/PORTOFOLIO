@@ -3,10 +3,8 @@ import { useState } from "react";
 const navItems = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About Me" },
-  // { href: "#skills", label: "Skills" },
-  // { href: "#education", label: "Education" },
-  { href: "#projects", label: "Projects" },
   { href: "#experiences", label: "Experiences" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -19,7 +17,7 @@ export default function Header({ sticky }) {
     const target = document.querySelector(href);
     if (target) {
       window.scrollTo({
-        top: target.offsetTop,
+        top: target.offsetTop - 80,
         behavior: "smooth",
       });
     }
