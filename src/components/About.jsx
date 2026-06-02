@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { skills } from "../data/skills";
 import ScrollReveal from "./ScrollReveal";
 import ImageMarquee from "./ImageMarquee";
 const educationData = [
@@ -52,7 +51,7 @@ export default function About() {
     });
 
     const icons = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 80; i++) {
       const icon = new THREE.Mesh(iconGeometry, iconMaterial);
       icon.position.x = (Math.random() - 0.5) * 60;
       icon.position.y = (Math.random() - 0.5) * 120;
@@ -103,7 +102,9 @@ export default function About() {
     <section id="about" ref={sectionRef} style={{ position: 'relative', overflow: 'hidden' }}>
       <canvas id="about-canvas" ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', opacity: 1, zIndex: 99 }}></canvas>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <h2 className="fade-in">About Me</h2>
+        <ScrollReveal>
+          <h2>About Me</h2>
+        </ScrollReveal>
 
         {/* Profile Info */}
         <div className="about-content">
@@ -130,8 +131,10 @@ export default function About() {
         </div>
 
         {/* Education Section */}
-        <div style={{ marginTop: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h2 className="fade-in">Education Journey</h2>
+        <div style={{ marginTop: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <ScrollReveal>
+            <h2>Education Journey</h2>
+          </ScrollReveal>
           <div style={{ width: '100%', maxWidth: '800px', padding: '0 20px' }}>
             <ScrollReveal>
               <div className="education-single-card">
@@ -171,35 +174,6 @@ export default function About() {
                 </div>
               </div>
             </ScrollReveal>
-          </div>
-        </div>
-
-        {/* Skills Section */}
-        <div style={{ marginTop: '100px' }}>
-          <h2 className="fade-in">My Skills</h2>
-          <div className="skills-container">
-            {skills.map((skill, index) => (
-              <ScrollReveal key={index}>
-                <div className="skill-card">
-                  <div className="skill-icon">
-                    <i className={skill.iconClass}></i>
-                    {skill.hasCpp && (
-                      <i style={{ fontSize: "1.5rem", marginLeft: "-10px" }}>
-                        ++
-                      </i>
-                    )}
-                  </div>
-                  <h3 className="skill-title">{skill.title}</h3>
-                  <p className="skill-description">{skill.description}</p>
-                  <div className="skill-progress">
-                    <div
-                      className="progress-bar"
-                      style={{ width: `${skill.width}%` }}
-                    ></div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </div>

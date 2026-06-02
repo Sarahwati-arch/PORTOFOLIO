@@ -77,7 +77,7 @@ export default function Hero() {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+      window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
     }
   }
 
