@@ -132,8 +132,8 @@ export const experiences = [
     ],
   },
   {
-    images: ["img/pr1.png", "img/pr2.png"],
-    title: "Programmer Internship (Remote)",
+    images: ["img/work/lnk.png"],
+    title: "Programmer Internship",
     category: "Work",
     org: "PT Lautan Natural Krimerindo",
     date: "June 2026 – Sept 2026",
@@ -144,7 +144,7 @@ export const experiences = [
     ],
   },
   {
-    images: ["img/pr1.png", "img/pr2.png"],
+    images: ["img/work/leverate.png"],
     title: "AI Engineer Internship",
     category: "Work",
     org: "Leverate Group",
@@ -156,7 +156,7 @@ export const experiences = [
     ],
   },
   {
-    images: ["img/pr1.png", "img/pr2.png"],
+    images: ["img/work/integrity.png", "img/work/integrity1.png"],
     title: "Software Engineer Internship",
     category: "Work",
     org: "Integrity Asia",
@@ -168,7 +168,7 @@ export const experiences = [
     ],
   },
   {
-    images: ["img/pr1.png", "img/pr2.png"],
+    images: ["img/work/upwork.png"],
     title: "AI Researcher Freelancer",
     category: "Work",
     org: "Upwork",
