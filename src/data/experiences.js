@@ -133,10 +133,22 @@ export const experiences = [
   },
   {
     images: ["img/pr1.png", "img/pr2.png"],
+    title: "Programmer Internship (Remote)",
+    category: "Work",
+    org: "PT Lautan Natural Krimerindo",
+    date: "June 2026 – Sept 2026",
+    details: [
+      "Developed and maintained web and mobile applications (Front-end & Back-end) utilizing MERN Stack and Laravel.",
+      "Managed system integrations, optimized database performance (PostgreSQL, MongoDB), and supported application deployments on cloud platforms.",
+      "Collaborated with cross-functional teams using Git for version control and modern project management tools like Jira and Trello."
+    ],
+  },
+  {
+    images: ["img/pr1.png", "img/pr2.png"],
     title: "AI Engineer Internship",
     category: "Work",
     org: "Leverate Group",
-    date: "Jan 2026 – May 2026",
+    date: "Jan 2026 – June 2026",
     details: [
       "Led the development of AI-driven applications, including RAG chatbots, Voice AI, and internal resource management tools.",
       "Built automated web content generation pipelines using n8n, significantly reducing manual production time.",
