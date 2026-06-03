@@ -555,41 +555,168 @@
 
 
         /* =========================================
-        Filter Buttons (Projects Section)
+        Projects Accordion (Replaces Filter Buttons)
         ========================================= */
-        .filter-container {
+        .projects-accordion {
             display: flex;
-            justify-content: center;
             gap: 15px;
+            width: 100%;
+            height: 650px; /* Fixed height to limit 1 screen */
+            align-items: stretch;
             margin-bottom: 40px;
-            flex-wrap: wrap;
         }
 
-        .filter-btn {
-            padding: 8px 25px;
-            background: transparent;
-            color: var(--light);
-            border: 2px solid var(--gray);
-            border-radius: 50px;
+        .projects-accordion-item {
+            flex: 0 0 70px;
+            background: #0b0f19;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
+            transition: flex 0.6s cubic-bezier(0.2, 1, 0.3, 1), background-color 0.3s;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #1f2937;
+            display: flex;
+            flex-direction: row;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .projects-accordion-item:hover,
+        .projects-accordion-item:focus {
+            background: #111827;
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .projects-accordion-item.active {
+            flex: 1 1 0%;
+            min-width: 0;
+            background: transparent;
+            border-color: transparent;
+            cursor: default;
+        }
+        
+        .projects-accordion-item.active:hover,
+        .projects-accordion-item.active:focus {
+            border-color: transparent;
+            outline: none;
+        }
+
+        .accordion-tab-vertical {
+            flex: 0 0 70px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            border-right: 1px solid transparent;
             transition: all 0.3s ease;
         }
-
-        .filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(239, 68, 68, 0.05);
-            /* Sedikit efek merah transparan saat dihover */
-        }
-
-        .filter-btn.active {
+        
+        .projects-accordion-item.active .accordion-tab-vertical {
             background: var(--primary);
             border-color: var(--primary);
+        }
+
+        .accordion-tab-vertical h3 {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--gray);
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .projects-accordion-item:hover .accordion-tab-vertical h3 {
+            color: var(--primary);
+        }
+        
+        .projects-accordion-item.active .accordion-tab-vertical h3 {
             color: white;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
-            /* Efek glow merah khas tema kamu */
+        }
+
+        .accordion-content {
+            flex: 1;
+            padding: 30px;
+            min-width: 700px;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            opacity: 1;
+            /* Hide scrollbar */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+        
+        .accordion-content::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .active-category-title {
+            font-size: 2.2rem;
+            color: var(--light);
+            margin: 0;
+        }
+
+        .project-count {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 600;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Responsive for Accordion */
+        @media screen and (max-width: 768px) {
+            .projects-accordion {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .projects-accordion-item {
+                flex: 0 0 70px;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .projects-accordion-item.active {
+                flex: 1 1 auto;
+                height: 500px; /* Limit height on mobile too */
+            }
+
+            .accordion-tab-vertical {
+                flex: 0 0 70px;
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid transparent;
+                padding: 0 25px;
+                justify-content: flex-start;
+            }
+            
+            .projects-accordion-item.active .accordion-tab-vertical {
+                border-bottom-color: var(--primary);
+            }
+
+            .accordion-tab-vertical h3 {
+                writing-mode: horizontal-tb;
+                transform: none;
+                letter-spacing: 1px;
+            }
+
+            .accordion-content {
+                min-width: 100%;
+                padding: 20px;
+            }
         }
 
         /* Projects Section */
@@ -601,8 +728,8 @@
 
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .project-card {

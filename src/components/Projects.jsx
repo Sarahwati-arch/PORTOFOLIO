@@ -11,7 +11,7 @@ export default function Projects() {
   const categories = ["App", "AI", "IoT"];
 
   // Logika filter disederhanakan karena hanya perlu mencocokkan kategori spesifik
-  const filteredProjects = projects.filter(project => project.category === filter);
+  // Logika filter disederhanakan karena hanya perlu mencocokkan kategori spesifik
 
   return (
     <section id="projects">
@@ -21,52 +21,62 @@ export default function Projects() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <div className="filter-container">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className={`filter-btn ${filter === cat ? "active" : ""}`}
-                onClick={() => setFilter(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </ScrollReveal>
+          <div className="projects-accordion">
+            {categories.map((cat) => {
+              const isActive = filter === cat;
+              const catProjects = projects.filter((project) => project.category === cat);
 
-        <div className="projects-container">
-          {filteredProjects.map((project, index) => (
-            <ScrollReveal key={`${filter}-${index}`}>
-              <div className="project-card">
-                <Slideshow images={project.images} />
-                <div className="project-content">
-                  <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="project-tag">
-                        {tag}
-                      </span>
-                    ))}
+              return (
+                <div
+                  key={cat}
+                  className={`projects-accordion-item ${isActive ? "active" : ""}`}
+                  onClick={() => !isActive && setFilter(cat)}
+                >
+                  <div className="accordion-tab-vertical">
+                    <h3>{cat}</h3>
                   </div>
-                  <div className="project-links">
-                    {project.links.map((link, i) => (
-                      <a
-                        key={i}
-                        href={link.url}
-                        className="project-link"
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noreferrer" : undefined}
-                      >
-                        {link.label}
-                      </a>
-                    ))}
+                  <div className="accordion-content">
+                    <div className="accordion-header">
+                      <h3 className="active-category-title">{cat} Projects</h3>
+                      <span className="project-count">{catProjects.length} Projects</span>
+                    </div>
+                    <div className="projects-container">
+                      {catProjects.map((project, index) => (
+                        <div key={`${cat}-${index}`} className="project-card">
+                          <Slideshow images={project.images} />
+                          <div className="project-content">
+                            <h3 className="project-title">{project.title}</h3>
+                            <p className="project-description">{project.description}</p>
+                            <div className="project-tags">
+                              {project.tags.map((tag, i) => (
+                                <span key={i} className="project-tag">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                            <div className="project-links">
+                              {project.links.map((link, i) => (
+                                <a
+                                  key={i}
+                                  href={link.url}
+                                  className="project-link"
+                                  target={link.external ? "_blank" : undefined}
+                                  rel={link.external ? "noreferrer" : undefined}
+                                >
+                                  {link.label}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
+              );
+            })}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -113,7 +113,6 @@ export default function About() {
             <h3>Hi! I am Sarah</h3>
             <p>
               An Informatics undergraduate at President University.
-              I don't just write code, I build practical solutions.
               With a solid foundation in software engineering, web development, and databases,
               I love pushing boundaries by exploring AI, IoT, and full-stack development.
               I believe great tech is built through collaboration and a drive to solve real-world problems.

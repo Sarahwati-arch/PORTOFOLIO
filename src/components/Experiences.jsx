@@ -22,17 +22,30 @@ export default function Experiences() {
       <ScrollReveal>
         <h2 style={{ marginBottom: "50px" }}>My Experiences</h2>
       </ScrollReveal>
-      
+
       <ScrollReveal>
         <div className="corkboard">
-          
+
           <div className="sticky-note" style={{ top: "40px", left: "40px" }}>
             <div className="sticky-note-pin"></div>
             Click any poster to see details!
           </div>
 
-          <div 
-            className="poster-wrapper poster-work" 
+          <div
+            className="poster-wrapper poster-org"
+            style={{ transform: "rotate(2deg)" }}
+            onClick={() => setActiveView("Organization")}
+          >
+            <div className="pin"></div>
+            <div className="poster-card">
+              <h3>Organization</h3>
+              <p>Leadership & Communities</p>
+            </div>
+          </div>
+
+
+          <div
+            className="poster-wrapper poster-work"
             style={{ transform: "rotate(-3deg)" }}
             onClick={() => setActiveView("Work")}
           >
@@ -43,19 +56,7 @@ export default function Experiences() {
             </div>
           </div>
 
-          <div 
-            className="poster-wrapper poster-org"
-            style={{ transform: "rotate(2deg)" }}
-            onClick={() => setActiveView("Organization")}
-          >
-            <div className="pin"></div>
-            <div className="poster-card">
-              <h3>Organization</h3>
-              <p>Leadership & Campus Communities</p>
-            </div>
-          </div>
-
-          <div 
+          <div
             className="poster-wrapper poster-vol"
             style={{ transform: "rotate(-1deg)" }}
             onClick={() => setActiveView("Volunteer")}
