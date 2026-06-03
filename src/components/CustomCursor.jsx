@@ -9,11 +9,20 @@ export default function CustomCursor() {
     const glow = glowRef.current;
     if (!cursor || !glow) return;
 
+    let mouseX = 0;
+    let mouseY = 0;
+    let rafId = null;
+
+    function updatePosition() {
+      cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      glow.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      rafId = requestAnimationFrame(updatePosition);
+    }
+    rafId = requestAnimationFrame(updatePosition);
+
     function onMouseMove(e) {
-      cursor.style.left = e.clientX + "px";
-      cursor.style.top = e.clientY + "px";
-      glow.style.left = e.clientX + "px";
-      glow.style.top = e.clientY + "px";
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     }
 
     function onMouseDown() {
@@ -58,6 +67,7 @@ export default function CustomCursor() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
+      cancelAnimationFrame(rafId);
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mousedown", onMouseDown);
       document.removeEventListener("mouseup", onMouseUp);

@@ -44,7 +44,7 @@ export default function About() {
 
     const iconGeometry = new THREE.TetrahedronGeometry(0.4, 0);
     const iconMaterial = new THREE.MeshBasicMaterial({
-      color: 0xef4444,
+      color: 0x8DA88C,
       wireframe: true,
       transparent: true,
       opacity: 0.6
@@ -80,20 +80,33 @@ export default function About() {
     resizeObserver.observe(section);
 
     let animationId;
+    let isVisible = true;
+
     function animate() {
+      if (isVisible) {
+        icons.forEach((icon) => {
+          icon.mesh.rotation.x += icon.rotSpeed;
+          icon.mesh.rotation.y += icon.rotSpeed;
+          icon.mesh.position.y += Math.sin(Date.now() * 0.001) * icon.floatSpeed;
+        });
+        renderer.render(scene, camera);
+      }
       animationId = requestAnimationFrame(animate);
-      icons.forEach((icon) => {
-        icon.mesh.rotation.x += icon.rotSpeed;
-        icon.mesh.rotation.y += icon.rotSpeed;
-        icon.mesh.position.y += Math.sin(Date.now() * 0.001) * icon.floatSpeed;
-      });
-      renderer.render(scene, camera);
     }
     animate();
+
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0 }); // threshold 0 means as long as even 1px is visible, it runs
+    
+    intersectionObserver.observe(section);
 
     return () => {
       cancelAnimationFrame(animationId);
       resizeObserver.disconnect();
+      intersectionObserver.disconnect();
       renderer.dispose();
     };
   }, []);

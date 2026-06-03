@@ -11,17 +11,17 @@
   width: 100%;
   max-width: 1000px;
   min-height: 600px;
-  background-color: #d4a373; /* Fallback color */
+  background-color: #F0EDE4;
   background-image: 
-    radial-gradient(#b87f53 15%, transparent 16%),
-    radial-gradient(#b87f53 15%, transparent 16%);
+    radial-gradient(#C0CFC1 15%, transparent 16%),
+    radial-gradient(#C0CFC1 15%, transparent 16%);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
-  border: 15px solid #5c4033;
+  border: 15px solid var(--primary);
   border-radius: 10px;
   box-shadow: 
-    inset 0 0 20px rgba(0,0,0,0.5),
-    0 10px 30px rgba(0,0,0,0.6);
+    inset 0 0 20px rgba(0,0,0,0.1),
+    0 10px 30px rgba(0,0,0,0.2);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -35,7 +35,7 @@
   content: '';
   position: absolute;
   top: -15px; left: -15px; right: -15px; bottom: -15px;
-  border: 2px solid #3a2818;
+  border: 2px solid var(--primary-dark);
   border-radius: 10px;
   pointer-events: none;
 }
@@ -69,22 +69,22 @@
 
 /* Different poster colors like Tuku */
 .poster-work .poster-card {
-  background-color: #d06d4e; /* Brownish red */
+  background-color: var(--primary); /* Dark Green */
   color: #fff;
 }
 .poster-work .poster-card h3 { color: #fff; }
 
 .poster-org .poster-card {
-  background-color: #e3bc4b; /* Yellow/Mustard */
-  color: #1f2937;
-}
-.poster-org .poster-card h3 { color: #1f2937; }
-
-.poster-vol .poster-card {
-  background-color: #728c69; /* Greenish */
+  background-color: var(--secondary); /* Medium Green */
   color: #fff;
 }
-.poster-vol .poster-card h3 { color: #fff; }
+.poster-org .poster-card h3 { color: #fff; }
+
+.poster-vol .poster-card {
+  background-color: #C0CFC1; /* Light Green */
+  color: var(--dark);
+}
+.poster-vol .poster-card h3 { color: var(--dark); }
 
 
 .poster-card h3 {
@@ -133,9 +133,9 @@
 }
 
 .btn-back {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--light);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--dark);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;

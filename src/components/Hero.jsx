@@ -16,8 +16,8 @@ export default function Hero() {
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
-          color: { value: "#2563eb" },
+          number: { value: 40, density: { enable: true, value_area: 800 } },
+          color: { value: "#4A6750" },
           shape: {
             type: "circle",
             stroke: { width: 0, color: "#000000" },
@@ -35,7 +35,7 @@ export default function Hero() {
           line_linked: {
             enable: true,
             distance: 150,
-            color: "#2563eb",
+            color: "#4A6750",
             opacity: 0.4,
             width: 1,
           },
@@ -107,8 +107,9 @@ export default function Hero() {
               onClick={(e) => handleScrollClick(e, "#projects")}
               style={{
                 marginLeft: "15px",
-                background: "transparent",
-                border: "2px solid var(--primary)",
+                background: "var(--secondary)",
+                color: "white",
+                border: "2px solid var(--secondary)",
               }}
             >
               View Projects

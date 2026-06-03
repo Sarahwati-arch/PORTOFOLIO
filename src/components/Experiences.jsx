@@ -234,7 +234,7 @@ export default function Experiences() {
                     </div>
                     <div className="work-details">
                       <h3>{exp.title}</h3>
-                      {exp.role && <h4 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>{exp.role}</h4>}
+                      {exp.role && <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>{exp.role}</h4>}
                       <p className="card-org" style={{ marginBottom: '15px' }}>
                         {exp.org || exp.description}
                         {(exp.org || exp.description) && <br />}
@@ -258,9 +258,9 @@ export default function Experiences() {
 
             {type === "Volunteer" && activeTab === "Committee" && (
               <ScrollReveal>
-                <div className="work-tab-content" style={{ background: 'rgba(255, 255, 255, 0.03)', borderRadius: '20px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <h3 style={{ marginBottom: '20px', color: 'var(--primary-color)' }}>Additional Roles</h3>
-                  <ul style={{ columns: 2, columnGap: '30px', margin: 0, padding: '0 0 0 20px', color: 'rgba(255,255,255,0.8)' }}>
+                <div className="work-tab-content" style={{ background: 'rgba(0, 0, 0, 0.03)', borderRadius: '20px', padding: '40px', border: '1px solid rgba(0,0,0,0.05)' }}>
+                  <h3 style={{ marginBottom: '20px', color: 'var(--primary)' }}>Additional Roles</h3>
+                  <ul style={{ columns: 2, columnGap: '30px', margin: 0, padding: '0 0 0 20px', color: 'var(--dark)' }}>
                     {additionalRoles.map((role, i) => (
                       <li key={i} style={{ marginBottom: '10px' }}>{role}</li>
                     ))}
