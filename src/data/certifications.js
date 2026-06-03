@@ -18,7 +18,7 @@ export const certifications = [
   {
     title: "Getting Started with AWS IoT",
     issuer: "Amazon Web Services (AWS)",
-    date: "",
+    date: "Mar 2025",
     credentialId: "",
     link: "",
     image: "img/certificate/aws.png",

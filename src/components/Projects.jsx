@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { projects } from "../data/projects";
-import { certifications } from "../data/certifications";
 import ScrollReveal from "./ScrollReveal";
 import Slideshow from "./Slideshow";
 
@@ -67,35 +66,6 @@ export default function Projects() {
               </div>
             </ScrollReveal>
           ))}
-        </div>
-
-        {/* Certifications Section */}
-        <div style={{ marginTop: '100px' }}>
-          <ScrollReveal>
-            <h2>My Certifications</h2>
-          </ScrollReveal>
-          <div className="skills-container">
-            {certifications.map((cert, index) => (
-              <ScrollReveal key={`cert-${index}`}>
-                <div className="skill-card" style={{ padding: '20px' }}>
-                  <div className="cert-image" style={{ marginBottom: '15px' }}>
-                    <img src={cert.image} alt={cert.title} style={{ width: '100%', borderRadius: '10px', height: '280px', objectFit: 'contain', background: '#fff' }} />
-                  </div>
-                  <h3 className="skill-title" style={{ fontSize: '1.2rem' }}>{cert.title}</h3>
-                  <p className="skill-description" style={{ marginBottom: '5px' }}>{cert.issuer}</p>
-                  {cert.date && <p className="skill-description" style={{ fontSize: '0.85rem' }}>Issued: {cert.date}</p>}
-                  {cert.credentialId && <p className="skill-description" style={{ fontSize: '0.85rem' }}>Credential ID: {cert.credentialId}</p>}
-                  {cert.link && (
-                    <div style={{ marginTop: '15px' }}>
-                      <a href={cert.link} target="_blank" rel="noreferrer" className="project-link" style={{ fontSize: '0.85rem', padding: '5px 10px' }}>
-                        View Credential
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </div>
     </section>
