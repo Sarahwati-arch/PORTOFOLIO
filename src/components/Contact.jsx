@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+import Robot3D from "./Robot3D";
 
 const contactItems = [
   // {
@@ -108,6 +109,13 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </ScrollReveal>
+            
+            {/* 3D Robot Character */}
+            <ScrollReveal>
+              <div className="robot-container" style={{ marginTop: '2rem', height: '300px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Robot3D />
               </div>
             </ScrollReveal>
           </div>
