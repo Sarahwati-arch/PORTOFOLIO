@@ -12,6 +12,7 @@ import "./ExperiencesBoard.css";
 export default function Experiences() {
   const [activeView, setActiveView] = useState("board"); // "board", "Work", "Organization", "Volunteer"
   const [selectedWorkIndex, setSelectedWorkIndex] = useState(0);
+  const [selectedSubcategory, setSelectedSubcategory] = useState("");
 
   const workExperiences = experiences.filter(exp => exp.category === "Work");
   const orgExperiences = experiences.filter(exp => exp.category === "Organization");
@@ -34,7 +35,7 @@ export default function Experiences() {
           <div
             className="poster-wrapper poster-org"
             style={{ transform: "rotate(2deg)" }}
-            onClick={() => setActiveView("Organization")}
+            onClick={() => { setActiveView("Organization"); setSelectedSubcategory(""); }}
           >
             <div className="pin"></div>
             <div className="poster-card">
@@ -59,7 +60,7 @@ export default function Experiences() {
           <div
             className="poster-wrapper poster-vol"
             style={{ transform: "rotate(-1deg)" }}
-            onClick={() => setActiveView("Volunteer")}
+            onClick={() => { setActiveView("Volunteer"); setSelectedSubcategory(""); }}
           >
             <div className="pin"></div>
             <div className="poster-card">
@@ -106,16 +107,20 @@ export default function Experiences() {
   );
 
   const renderBackButton = (title) => (
-    <div className="detail-view-header">
-      <button className="btn-back" onClick={() => setActiveView("board")}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Back to Board
-      </button>
-      <h2 style={{ margin: 0, padding: 0 }}>{title} Experience</h2>
-      <div style={{ width: "155px" }}></div>
+    <div>
+      <div className="detail-view-header">
+        <div>
+          <button className="btn-back" onClick={() => setActiveView("board")}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Board
+          </button>
+        </div>
+        <h2 style={{ margin: 0, padding: 0, textAlign: "center" }}>{title} Experience</h2>
+        <div></div>
+      </div>
     </div>
   );
 
@@ -179,8 +184,11 @@ export default function Experiences() {
     </div>
   );
 
-  const renderLeadershipExperience = (type) => {
+  const renderGroupedExperience = (type) => {
     const filteredExperiences = type === "Organization" ? orgExperiences : volExperiences;
+    const tabs = Array.from(new Set(filteredExperiences.map(exp => exp.subcategory)));
+    const activeTab = tabs.includes(selectedSubcategory) ? selectedSubcategory : tabs[0];
+    const currentExperiences = filteredExperiences.filter(exp => exp.subcategory === activeTab);
 
     return (
       <div className="container" style={{ paddingTop: '50px' }}>
@@ -188,47 +196,79 @@ export default function Experiences() {
           {renderBackButton(type)}
         </ScrollReveal>
 
-        <div className="card-experience-grid" style={{ marginTop: '40px' }}>
-          {filteredExperiences.map((exp, index) => (
-            <ScrollReveal key={`${type}-${index}`}>
-              <div className="card-experience">
-                {exp.images ? (
-                  <Slideshow images={exp.images} />
-                ) : exp.image ? (
-                  <div className="timeline-img" style={{ marginBottom: '20px' }}>
-                    <img src={exp.image} alt={exp.title} style={{ width: '100%', borderRadius: '10px' }} />
+        <div className="work-tabs-container" style={{ marginTop: '40px' }}>
+          <ScrollReveal>
+            <div className="work-tabs">
+              {tabs.map((tab, idx) => (
+                <button
+                  key={idx}
+                  className={`work-tab ${activeTab === tab ? "active" : ""}`}
+                  onClick={() => setSelectedSubcategory(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '30px' }}>
+            {currentExperiences.map((exp, idx) => (
+              <ScrollReveal key={idx}>
+                <div className="work-tab-content" style={{ minHeight: 'auto', borderRadius: '20px', overflow: 'hidden' }}>
+                  <div
+                    className="work-content-bg"
+                    style={{
+                      backgroundImage: `url(${exp.images?.[0] || exp.image})`,
+                      borderRadius: '20px'
+                    }}
+                  ></div>
+                  <div className="work-content-overlay" style={{ borderRadius: '20px' }}></div>
+
+                  <div className="work-content-inner" style={{ position: 'relative', zIndex: 2, padding: '40px' }}>
+                    <div className="work-visual">
+                      {exp.images ? (
+                        <img src={exp.images[0]} alt={exp.title} />
+                      ) : exp.image ? (
+                        <img src={exp.image} alt={exp.title} />
+                      ) : null}
+                    </div>
+                    <div className="work-details">
+                      <h3>{exp.title}</h3>
+                      {exp.role && <h4 style={{ color: 'var(--primary-color)', marginBottom: '10px' }}>{exp.role}</h4>}
+                      <p className="card-org" style={{ marginBottom: '15px' }}>
+                        {exp.org || exp.description}
+                        {(exp.org || exp.description) && <br />}
+                        <span>{exp.date}</span>
+                      </p>
+                      
+                      {exp.details && (
+                        <div className="work-desc">
+                          <ul>
+                            {exp.details.map((detail, i) => (
+                              <li key={i}>{detail}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                ) : null}
-                <h3>{exp.title}</h3>
-                <h4>{exp.role}</h4>
-                <p className="card-org">
-                  {exp.org || exp.description}
-                  <br />
-                  <span>{exp.date}</span>
-                </p>
-                {exp.details && (
-                  <ul>
-                    {exp.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
+                </div>
+              </ScrollReveal>
+            ))}
+
+            {type === "Volunteer" && activeTab === "Committee" && (
+              <ScrollReveal>
+                <div className="work-tab-content" style={{ background: 'rgba(255, 255, 255, 0.03)', borderRadius: '20px', padding: '40px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <h3 style={{ marginBottom: '20px', color: 'var(--primary-color)' }}>Additional Roles</h3>
+                  <ul style={{ columns: 2, columnGap: '30px', margin: 0, padding: '0 0 0 20px', color: 'rgba(255,255,255,0.8)' }}>
+                    {additionalRoles.map((role, i) => (
+                      <li key={i} style={{ marginBottom: '10px' }}>{role}</li>
                     ))}
                   </ul>
-                )}
-              </div>
-            </ScrollReveal>
-          ))}
-
-          {type === "Volunteer" && (
-            <ScrollReveal>
-              <div className="card-experience" style={{ gridColumn: "1 / -1" }}>
-                <h3>Additional Roles</h3>
-                <ul style={{ columns: 2, columnGap: 30 }}>
-                  {additionalRoles.map((role, i) => (
-                    <li key={i}>{role}</li>
-                  ))}
-                </ul>
-              </div>
-            </ScrollReveal>
-          )}
+                </div>
+              </ScrollReveal>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -238,7 +278,7 @@ export default function Experiences() {
     <section id="experiences">
       {activeView === "board" && renderBoard()}
       {activeView === "Work" && renderWorkExperience()}
-      {(activeView === "Organization" || activeView === "Volunteer") && renderLeadershipExperience(activeView)}
+      {(activeView === "Organization" || activeView === "Volunteer") && renderGroupedExperience(activeView)}
     </section>
   );
 }

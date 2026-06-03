@@ -124,12 +124,12 @@
 
 /* Detail View Header */
 .detail-view-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   margin-bottom: 30px;
   padding: 0 20px;
-  gap: 30px;
+  gap: 10px;
 }
 
 .btn-back {
@@ -186,5 +186,10 @@
   }
   .poster-wrapper {
     margin-bottom: 20px;
+  }
+  .detail-view-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }
