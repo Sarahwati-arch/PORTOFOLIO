@@ -2,11 +2,11 @@ import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 
 const contactItems = [
-  {
-    icon: "fas fa-phone",
-    title: "Phone",
-    text: "+62 821 7572 6492",
-  },
+  // {
+  //   icon: "fas fa-phone",
+  //   title: "Phone",
+  //   text: "+62 821 7572 6492",
+  // },
   {
     icon: "fas fa-envelope",
     title: "Email",
@@ -15,7 +15,7 @@ const contactItems = [
   {
     icon: "fas fa-map-marker-alt",
     title: "Location",
-    text: "Bekasi, Indonesia",
+    text: "South Jakarta, DKI Jakarta, Indonesia",
   },
 ];
 
@@ -23,7 +23,8 @@ const socialLinks = [
   { href: "https://github.com/Sarahwati-arch", icon: "fab fa-github" },
   { href: "https://linkedin.com/in/sarah-wati-5a8989243", icon: "fab fa-linkedin-in" },
   { href: "https://www.instagram.com/vvtysr/", icon: "fab fa-instagram" },
-  { href: "https://wa.me/6282175726492", icon: "fab fa-whatsapp" },
+  // { href: "mailto:sarahwati2004@gmail.com", icon: "fas fa-envelope" },
+  // { href: "https://wa.me/6282175726492", icon: "fab fa-whatsapp" },
 ];
 
 export default function Contact() {
@@ -33,11 +34,33 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    alert("Thank you for your message! I will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqeozlgk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert("Thank you for your message! I will get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function handleChange(e) {
@@ -47,7 +70,9 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container">
-        <h2 className="fade-in">Get In Touch</h2>
+        <ScrollReveal>
+          <h2>Get In Touch</h2>
+        </ScrollReveal>
         <div className="contact-container">
           <div className="contact-info">
             {contactItems.map((item, index) => (
@@ -137,8 +162,9 @@ export default function Contact() {
                   type="submit"
                   className="btn"
                   style={{ width: "100%" }}
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
