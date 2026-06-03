@@ -131,7 +131,7 @@ export default function About() {
         </div>
 
         {/* Education Section */}
-        <div style={{ marginTop: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ marginTop: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <ScrollReveal>
             <h2>Education Journey</h2>
           </ScrollReveal>

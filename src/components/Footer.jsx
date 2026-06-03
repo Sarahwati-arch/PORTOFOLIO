@@ -1,10 +1,8 @@
 const footerLinks = [
   { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
-  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "About Me" },
   { href: "#experiences", label: "Experiences" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -12,7 +10,8 @@ const socialLinks = [
   { href: "https://github.com/Sarahwati-arch", icon: "fab fa-github" },
   { href: "https://linkedin.com/in/sarah-wati-5a8989243", icon: "fab fa-linkedin-in" },
   { href: "https://www.instagram.com/vvtysr/", icon: "fab fa-instagram" },
-  { href: "https://wa.me/6282175726492", icon: "fab fa-whatsapp" },
+  { href: "mailto:sarahwati2004@gmail.com", icon: "fas fa-envelope" },
+  // { href: "https://wa.me/6282175726492", icon: "fab fa-whatsapp" },
 ];
 
 export default function Footer() {
@@ -48,9 +47,9 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <div className="footer-bottom">
+        {/* <div className="footer-bottom">
           <p>&copy; 2025 Sarahwati. All Rights Reserved.</p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

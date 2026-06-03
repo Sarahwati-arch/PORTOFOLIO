@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 const phrases = [
-  " AI Developer ",
-  " IOT Enggineering ",
-  " Fullstack Web Developer ",
-  " Backend Developer ",
-  " Mobile App Developer ",
-  " Data Analys ",
+  " Software Engineer ",
+  " AI Engineer ",
+  " IOT Engineer ",
 ];
 
 export default function Hero() {
@@ -77,7 +74,7 @@ export default function Hero() {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
+      window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
     }
   }
 
@@ -127,8 +124,8 @@ export default function Hero() {
             <a href="https://www.instagram.com/vvtysr/" target="_blank" rel="noreferrer">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/6282175726492" target="_blank" rel="noreferrer">
-              <i className="fab fa-whatsapp"></i>
+            <a href="mailto:sarahwati2004@gmail.com" target="_blank" rel="noreferrer">
+              <i className="fas fa-envelope"></i>
             </a>
           </div>
         </div>

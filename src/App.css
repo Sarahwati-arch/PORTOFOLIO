@@ -319,7 +319,7 @@
 
         /* About Section */
         #about {
-            padding: 40px 0;
+            padding: 100px 0 40px 0;
             background: linear-gradient(to bottom, #0f172a, #1e1b4b);
         }
 
@@ -328,7 +328,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: -50px;
+            margin-top: 0;
             gap: 40px;
         }
 
